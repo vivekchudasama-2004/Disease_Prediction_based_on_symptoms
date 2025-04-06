@@ -18,9 +18,9 @@ DESCRIPTION_PATH = os.path.join(BASE_PATH, 'Dataset', 'symptom_description.csv')
 DATASET_PATH = os.path.join(BASE_PATH, 'Dataset', 'dataset.csv')
 
 # Load the model
-try :
+try:
     model_RFC = jb.load(MODEL_PATH)
-except FileNotFoundError :
+except FileNotFoundError:
     st.error(f"Model file not found at {MODEL_PATH}. Please ensure it exists.")
     st.stop()
 
