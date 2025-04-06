@@ -7,13 +7,15 @@ from sklearn.metrics import accuracy_score
 import streamlit_option_menu as som
 import os
 
-# File paths
-BASE_PATH = r'C:\Users\Vivek\PycharmProjects\Project\Project_main\Dataset'
-MODEL_PATH = 'model_RFC.sav'
-SEVERITY_PATH = os.path.join(BASE_PATH, 'Symptom-severity.csv')
-PRECAUTION_PATH = os.path.join(BASE_PATH, 'symptom_precaution.csv')
-DESCRIPTION_PATH = os.path.join(BASE_PATH, 'symptom_description.csv')
-DATASET_PATH = os.path.join(BASE_PATH, 'dataset.csv')
+# Base path based on the current file's directory
+BASE_PATH = os.path.dirname(__file__)
+
+# Dynamic file paths
+MODEL_PATH = os.path.join(BASE_PATH, 'model_RFC.sav')
+SEVERITY_PATH = os.path.join(BASE_PATH, 'Dataset', 'Symptom-severity.csv')
+PRECAUTION_PATH = os.path.join(BASE_PATH, 'Dataset', 'symptom_precaution.csv')
+DESCRIPTION_PATH = os.path.join(BASE_PATH, 'Dataset', 'symptom_description.csv')
+DATASET_PATH = os.path.join(BASE_PATH, 'Dataset', 'dataset.csv')
 
 # Load the model
 try :
