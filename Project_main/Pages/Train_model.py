@@ -12,10 +12,24 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-# Hugging Face credentials
-hf_username = "Raj23804"
-hf_token = "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"
-login(token=hf_token)  # Authenticate once at startup
+# Hugging Face credentials - Load from environment variables
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+hf_username = os.getenv("HF_USERNAME", "default_username")
+hf_token = os.getenv("HF_TOKEN")
+
+# Only authenticate if token is provided
+if hf_token:
+    try:
+        login(token=hf_token)
+        st.success("✅ Hugging Face authentication successful!")
+    except Exception as e:
+        st.warning(f"⚠️ Hugging Face authentication failed: {e}")
+else:
+    st.info("ℹ️ Hugging Face token not provided. Model upload features will be disabled.")
 
 # Predefined list of classification models
 CLASSIFICATION_MODELS = {
