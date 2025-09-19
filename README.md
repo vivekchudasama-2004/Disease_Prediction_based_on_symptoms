@@ -36,20 +36,40 @@ This project leverages machine learning to analyze user symptoms and predict pos
 
 ---
 
+## 🌐 Live Demo
+
+**🚀 [Try the live demo here!](https://your-app-name.streamlit.app)** *(Deploy using instructions below)*
+
 ## ⚡ Usage
 
-### 1. Web Application
+### 1. Web Application (Streamlit)
 
 Run the web app using:
 ```bash
-python app.py
+streamlit run Project_main/app.py
 ```
-Then open your browser and go to the local URL displayed in your terminal (commonly `http://127.0.0.1:5000/`).
+Then open your browser and go to the URL displayed in your terminal (commonly `http://localhost:8501`).
 
 ### 2. Jupyter Notebook
 
 1. Open `Disease_Prediction_based_on_symptoms.ipynb` in Jupyter Notebook or JupyterLab.
 2. Run the cells to explore the data, train/test models, and make predictions.
+
+## 🚀 Deployment
+
+### Quick Deploy to Streamlit Cloud
+1. Fork this repository to your GitHub account
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub account and select this repository
+4. Set main file path: `Project_main/app.py`
+5. Click "Deploy"!
+
+### Other Deployment Options
+- **Heroku**: Use the included `Procfile` and `runtime.txt`
+- **Railway**: Automatic deployment from GitHub
+- **Docker**: Use the provided `Dockerfile`
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ---
 
